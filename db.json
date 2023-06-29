@@ -1,0 +1,634 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "json-server",
+      "password": "typicode"
+    },
+    {
+      "id": "2",
+      "username": "kazem-rezaie",
+      "password": "12345678"
+    }
+  ],
+  "stores": [
+    {
+      "id": "1",
+      "title": "فروشگاه کهن",
+      "userIds": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "فروشگاه امید",
+      "userIds": [
+        "2"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "فروشگاه سپاهان",
+      "userIds": [
+        "2"
+      ]
+    }
+  ],
+  "storeProducts": [
+    {
+      "id": "1",
+      "name": "چیپس مزمز",
+      "price": 15000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "دوغ آبعلی",
+      "price": 24000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "تخمه آفتابگردان",
+      "price": 165000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "دفتر",
+      "price": 90000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "خورشت قیمه",
+      "price": 95000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "نودل",
+      "price": 34000,
+      "storeIds": [
+        "2",
+        "1"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "data": {
+        "items": [
+          {
+            "productId": "1",
+            "name": "چیپس مزمز",
+            "count": 2,
+            "price": 30000
+          },
+          {
+            "productId": "6",
+            "name": "نودل",
+            "count": 1,
+            "price": 34000
+          },
+          {
+            "productId": "3",
+            "name": "تخمه آفتابگردان",
+            "count": 1,
+            "price": 165000
+          },
+          {
+            "productId": "4",
+            "name": "دفتر",
+            "count": 2,
+            "price": 180000
+          }
+        ],
+        "totalPrice": 409000
+      },
+      "id": 1
+    },
+    {
+      "data": {
+        "items": [
+          {
+            "productId": "1",
+            "name": "چیپس مزمز",
+            "count": 2,
+            "price": 30000
+          },
+          {
+            "productId": "6",
+            "name": "نودل",
+            "count": 1,
+            "price": 34000
+          },
+          {
+            "productId": "3",
+            "name": "تخمه آفتابگردان",
+            "count": 1,
+            "price": 165000
+          },
+          {
+            "productId": "4",
+            "name": "دفتر",
+            "count": 2,
+            "price": 180000
+          }
+        ],
+        "totalPrice": 409000
+      },
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 10,
+          "price": 150000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 339000,
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 10,
+          "price": 150000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 339000,
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 10,
+          "price": 150000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 339000,
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 12,
+          "price": 288000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 468000,
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1058,
+          "price": 95220000
+        },
+        {
+          "productId": "5",
+          "name": "خورشت قیمه",
+          "count": 1,
+          "price": 95000
+        },
+        {
+          "productId": "6",
+          "name": "نودل",
+          "count": 1,
+          "price": 34000
+        }
+      ],
+      "totalPrice": 95364000,
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 5,
+          "price": 75000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 12,
+          "price": 288000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 3,
+          "price": 495000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        }
+      ],
+      "totalPrice": 948000,
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 4,
+          "price": 96000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 4,
+          "price": 660000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 3,
+          "price": 270000
+        },
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 12,
+          "price": 180000
+        }
+      ],
+      "totalPrice": 1206000,
+      "id": 9
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        }
+      ],
+      "totalPrice": 294000,
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        },
+        {
+          "productId": "5",
+          "name": "خورشت قیمه",
+          "count": 2,
+          "price": 190000
+        }
+      ],
+      "totalPrice": 445000,
+      "id": 11
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        }
+      ],
+      "totalPrice": 294000,
+      "id": 12
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 2,
+          "price": 330000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        }
+      ],
+      "totalPrice": 420000,
+      "id": 13
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        }
+      ],
+      "totalPrice": 39000,
+      "id": 14
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        }
+      ],
+      "totalPrice": 39000,
+      "id": 15
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        }
+      ],
+      "totalPrice": 294000,
+      "id": 16
+    },
+    {
+      "items": [
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 1,
+          "price": 15000
+        },
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 1,
+          "price": 24000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 204000,
+      "id": 17
+    },
+    {
+      "items": [
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 2,
+          "price": 180000
+        },
+        {
+          "productId": "5",
+          "name": "خورشت قیمه",
+          "count": 1,
+          "price": 95000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        }
+      ],
+      "totalPrice": 440000,
+      "id": 18
+    },
+    {
+      "items": [
+        {
+          "productId": "6",
+          "name": "نودل",
+          "count": 1,
+          "price": 34000
+        },
+        {
+          "productId": "5",
+          "name": "خورشت قیمه",
+          "count": 1,
+          "price": 95000
+        }
+      ],
+      "totalPrice": 129000,
+      "id": 19
+    },
+    {
+      "items": [
+        {
+          "productId": "2",
+          "name": "دوغ آبعلی",
+          "count": 2,
+          "price": 48000
+        },
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "6",
+          "name": "نودل",
+          "count": 1,
+          "price": 34000
+        },
+        {
+          "productId": "5",
+          "name": "خورشت قیمه",
+          "count": 1,
+          "price": 95000
+        }
+      ],
+      "totalPrice": 342000,
+      "id": 20
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "name": "تخمه آفتابگردان",
+          "count": 1,
+          "price": 165000
+        },
+        {
+          "productId": "4",
+          "name": "دفتر",
+          "count": 1,
+          "price": 90000
+        },
+        {
+          "productId": "1",
+          "name": "چیپس مزمز",
+          "count": 4,
+          "price": 60000
+        }
+      ],
+      "totalPrice": 315000,
+      "id": 21
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+@font-face {
+	font-family: "IranSans-Thin";
+	font-weight: 100;
+	src: url("./IRANSansWeb(FaNum)_UltraLight.woff");
+}
+@font-face {
+	font-family: "IranSans-Light";
+	font-weight: 300;
+	src: url("./IRANSansWeb(FaNum)_Light.woff");
+}
+@font-face {
+	font-family: "IranSans-Medium";
+	font-weight: 500;
+	src: url("./IRANSansWeb(FaNum)_Medium.woff");
+}
+
+@font-face {
+	font-family: "IranSans-Bold";
+	font-weight: 700;
+	src: url("./IRANSansWeb(FaNum)_Bold.woff")
+}
+
+@font-face {
+	font-family: "IranSans-Black";
+	font-weight: 900;
+	src: url("./IRANSansWeb(FaNum)_Black.woff");
+}
+
+@font-face {
+	font-family: "IranSans-Numbers";
+	src: url("./IRANSansWeb.woff2");
+} 
+
+
+.font-IranSans-thin {
+	font-family: "IranSans-Thin";
+}
+.font-IranSans-light {
+	font-family: "IranSans-Light";
+	word-spacing: -2px;
+}
+.font-IranSans {
+	font-family: "IranSans";
+}
+.font-IranSans-medium {
+	font-family: "IranSans-Medium";
+}
+.font-IranSans-bold {
+	font-family: "IranSans-Bold";
+	word-spacing: -2px;
+}
+
+.font-IranSans-black {
+	font-family: "IranSans-Black";
+	word-spacing: -2px;
+}
+
+.font-IranSans-numbers {
+	font-family: "IranSans-Numbers";
+	word-spacing: -2px;
+}
+
+.font-IranSans-web-fa {
+	font-family: 'IranSansWebFa';
+	word-spacing: -2px;
+}
+.font-IranSans-web-fa-l {
+	font-family: 'IranSansWebFaLight';
+	word-spacing: -2px;
+}
+.font-IranSans-web-fa-m {
+	font-family: 'IranSansWebFaMedium';
+	word-spacing: -2px;
+}
+.font-IranSans-web-l {
+	font-family: 'IranSansWebLight';
+	word-spacing: -2px;
+}
+.font-IranSans-web-m {
+	font-family: 'IranSansWebMedium';
+	word-spacing: -2px;
+}
