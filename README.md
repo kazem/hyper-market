@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Start json server
+```
+npm run start
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
