@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import {useAuthStore} from '@/store/auth.ts'
+import {useAuthStore} from '@/store/auth'
 import { ref, reactive, onMounted } from 'vue';
-import { VTextField, VBtn } from 'vuetify/lib/components'
+import { VTextField, VBtn, VSnackbar } from 'vuetify/lib/components'
  import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, maxLength, helpers } from '@vuelidate/validators'
 import {useRouter} from 'vue-router/composables'
@@ -13,9 +13,9 @@ const router = useRouter()
 //     length: (value: string) => (value?.length <= 12 && value?.length >= 8 ) || 'تعداد کارکتر بین 8 تا 12 باشد'
 // })
 const authStore = useAuthStore();
-const login = async () => {       
+const login = async () => {          
     await authStore.login(formData.username, formData.password)
-    if(authStore.isLoggedIn){
+    if(authStore.isLoggedIn){       
         router.push('/stores')
     }
 }
@@ -35,7 +35,7 @@ const formData = reactive({username: '', password: ''})
 </script>
 
 <template>
-    <div class="login-page">      
+    <form class="login-page" @submit.prevent="login()">        
         <div class="login-page_container">
             <VTextField              
                 dir="rtl" 
@@ -55,15 +55,22 @@ const formData = reactive({username: '', password: ''})
              />
             <div class="login-page_btn">
                 <VBtn
-                    :disabled="v$.$invalid"
-                    @click="login()"
+                    type="submit"
+                    :disabled="v$.$invalid"              
                     :loading="authStore.serverState === 'PENDING' ? true : false"
                 >
                     تایید
                 </VBtn>
             </div>
         </div>
-    </div>
+        <v-snackbar
+            :timeout="3000"
+            :color="'rgb(255,0,0)'" 
+            :value="authStore.serverState === 'ERROR' ? true : false"
+        >
+            <p v-if="authStore.serverState === 'ERROR'" class="text-center">{{ authStore.errorMessage }}</p>            
+        </v-snackbar>
+    </form>
 </template>
 
 <style lang="scss">

@@ -9,7 +9,7 @@ export async function login(username: string, password: string): Promise<User> {
         }
         if (!response.data.err && response.data.length === 0) {
             throw {
-                message: 'User not found'
+                message: 'نام کاربری یا رمز عبور اشتباه است'
             }
         }
         else {

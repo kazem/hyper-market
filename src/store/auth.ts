@@ -8,7 +8,8 @@ export const useAuthStore = defineStore('auth', {
         return {
             currentUser: null as User | null,
             serverState: ServerState.NONE as ServerState,
-            isLoggedIn: false as Boolean
+            isLoggedIn: false as Boolean,
+            errorMessage: '' as String
         }
     },
     actions: {
@@ -21,10 +22,11 @@ export const useAuthStore = defineStore('auth', {
                 localStorage.setItem('userId', this.currentUser.id)
                 this.setServerState(ServerState.SUCCESSFUL)
             }
-            catch (e) {
+            catch (e: any) {
                 console.log('catch: ', e);
                 this.isLoggedIn = false;
                 this.setServerState(ServerState.ERROR)
+                this.errorMessage = e.message;
                 // sessionStorage.clear();
                 // localStorage.clear();
             }
