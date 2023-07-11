@@ -6,11 +6,11 @@ import HpySimpleCard from '@/components/HpySimpleCard.vue'
 const router = useRouter()
 
 const shopStore = useShopStore();
-const selectStore = (storeId: string) => {   
+const selectStore = (storeId: string) => {
     shopStore.setSelectedStore(storeId)
     router.push('/home')
 }
-onMounted(async () => {  
+onMounted(async () => {
     await shopStore.setShopList()
 })
 </script>
@@ -20,13 +20,13 @@ onMounted(async () => {
   <div class="store-page pt-4 mb-4 px-4">
       <p>
           لیست فروشگاه‌های شما
-      </p>      
+      </p>
       <template v-if="shopStore.serverState === 'SUCCESSFUL'">
           <template v-if="shopStore.shopListCount > 0">
-            <HpySimpleCard 
-                v-for="(store, index) in shopStore.shopList" 
-                :key="index" 
-                :title="store.title" 
+            <HpySimpleCard
+                v-for="(store, index) in shopStore.shopList"
+                :key="index"
+                :title="store.title"
                 @click="() => selectStore(store.id)"
             />
           </template>
@@ -44,9 +44,9 @@ onMounted(async () => {
 
 
 <style lang="scss" scoped>
-.store-page {    
+.store-page {
     margin: auto;
-    max-width: 550px;    
+    max-width: 550px;
 }
 </style>>
 

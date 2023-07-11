@@ -20,6 +20,14 @@ export interface basketItem extends Omit<StoreProduct, "id"> {
     count: number
 }
 
+export interface ApiParams {
+    filters?: string,
+    pagination?: {
+        page: number,
+        limit: number
+    }
+}
+
 export interface Order {
     items: basketItem[],
     totalPrice: number

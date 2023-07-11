@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import { Shop, ServerState, StoreProduct, basketItem, Order } from "@/type/index"
-import { getShopList, getShopProducts, createOrder } from "@/service/shop"
+import { getShopList, getShopProducts, createOrder, handleShopListRequest } from "@/service/shop"
 
 export const useShopStore = defineStore('shop', {
     state: () => {
         return {
             currentShop: null as Shop | null,
             currentStoreProducts: [] as StoreProduct[],
-            shopList: [] as Shop[],
+            shopList: [] as Shop[] | undefined,
             basketItems: [] as basketItem[],
             serverState: ServerState.NONE as ServerState,
             orderState: ServerState.NONE as ServerState
@@ -17,7 +17,7 @@ export const useShopStore = defineStore('shop', {
         async setShopList() {
             this.setServerState(ServerState.PENDING)
             try {
-                this.shopList = await getShopList()
+                this.shopList = await handleShopListRequest(1, [])
                 this.setServerState(ServerState.SUCCESSFUL)
             }
             catch (e) {
@@ -27,9 +27,9 @@ export const useShopStore = defineStore('shop', {
         },
 
         setSelectedStore(storeId: string) {
-            let selectedShop = this.shopList.find(shop => shop.id === storeId)
+            let selectedShop = this.shopList?.find(shop => shop.id === storeId);
             if (selectedShop)
-                this.currentShop = selectedShop
+                this.currentShop = selectedShop;
         },
 
         async setStoreProducts() {
@@ -107,7 +107,10 @@ export const useShopStore = defineStore('shop', {
     },
     getters: {
         shopListCount(): number {
-            return this.shopList.length;
+            if(this.shopList)
+                return this.shopList.length;
+            else
+                return 0
         },
         currentShopTitle(): string {
             if (this.currentShop)

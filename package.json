@@ -11,12 +11,14 @@
     "@vuelidate/core": "^2.0.2",
     "@vuelidate/validators": "^2.0.2",
     "axios": "^1.4.0",
+    "json-server": "^0.17.3",
     "pinia": "^2.1.4",
     "vue": "^2.7",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.6.5",
-    "vuetify": "^2.6.15"
+    "vuetify": "^2.6.15",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.0",

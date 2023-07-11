@@ -34,9 +34,9 @@ onBeforeMount(() => {
         >
             ارسال اطلاعات
         </VBtn>
-        <v-snackbar 
+        <v-snackbar
              :timeout="3000"
-            :color="shopStore.orderState === 'SUCCESSFUL' ? '#198754' : 'red'" 
+            :color="shopStore.orderState === 'SUCCESSFUL' ? '#198754' : 'red'"
             :value="shopStore.orderState !== 'PENDING' &&  shopStore.orderState !== 'NONE' ? true : false"
         >
             <p v-if="shopStore.orderState === 'SUCCESSFUL'" class="text-center">با موفقیت انجام شد</p>
