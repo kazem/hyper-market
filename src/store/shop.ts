@@ -75,7 +75,7 @@ export const useShopStore = defineStore('shop', {
                 let count = this.basketItems[indexInBasket].count;
                 let price = this.basketItems[indexInBasket].price;
                 if (count)
-                    this.basketItems[indexInBasket].price = (price / count) * (newCount)
+                    this.basketItems[indexInBasket].price = (price / count) * (newCount);
                 else
                     this.basketItems[indexInBasket].price = newCount * selectedProduct.price;
                 this.basketItems[indexInBasket].count = newCount;
