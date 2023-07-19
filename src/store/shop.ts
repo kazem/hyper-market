@@ -18,6 +18,7 @@ export const useShopStore = defineStore('shop', {
             this.setServerState(ServerState.PENDING)
             try {
                 this.shopList = await handleShopListRequest(1, [])
+                console.log('this.shopList: ', this.shopList);
                 this.setServerState(ServerState.SUCCESSFUL)
             }
             catch (e) {
