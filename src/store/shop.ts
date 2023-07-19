@@ -94,7 +94,7 @@ export const useShopStore = defineStore('shop', {
             }
             catch (e) {
                 console.log('catch: ', e);
-                this.setOrderState(ServerState.ERROR)
+                this.setOrderState(ServerState.ERROR);
             }
         },
 
