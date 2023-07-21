@@ -2,18 +2,12 @@ import API from './API'
 import { Shop, StoreProduct, Order, ApiParams } from "@/type/index"
 import { getUserId } from '@/utils/authUtil'
 
-export async function getShopList(params?: ApiParams): Promise<Array<any>> {
+export function getShopList(params?: ApiParams): Promise<Shop[]> {
     return new Promise((resolve, reject) => {
         let setParams = params?.pagination ? `&_page=${params.pagination.page}&_limit=${params.pagination.limit}` : ''
         API().get(`/stores?userIds_like=${getUserId()}${setParams}`).then(response => {
             if (!response.data.err){
-                /* const res: any = {
-                    data: response.data,
-                    count: response.headers["x-total-count"]
-                } */
-
-                    resolve([...response.data])
-
+                resolve([...response.data])                  
             }
             else {
 
@@ -28,29 +22,18 @@ export async function getShopList(params?: ApiParams): Promise<Array<any>> {
     })
 }
 
-export async function handleShopListRequest(currentPage: number, prevResult: Shop[]): Promise<Shop[] | undefined> {
-    console.log('currentPage: ', currentPage)
-    let limit = 100;
-    try {
-        let response: any = await getShopList({pagination: {page: currentPage, limit: limit}})
-        if(response && response.length === 100){
-            console.log('Recall')
-            let newPage = currentPage + 1;
-            console.log('newPage: ', newPage)
-            prevResult.concat(response)
-            handleShopListRequest(newPage, prevResult)
-            return prevResult;
-        }
-        else {
-            console.log('End')
-            prevResult.concat(response)
-            return prevResult;
-        }
+export async function handleShopListRequest(currentPage: number, setShopList: Function) {
+    try{      
+        let result = await getShopList({pagination: {page: currentPage, limit: 100}})        
+        if(result.length < 100)
+            return;
+        setShopList(result)
+        await handleShopListRequest(currentPage + 1, setShopList)
     }
-    catch {
-        console.log('handleShopListRequest catch: ', currentPage)
-        handleShopListRequest(currentPage, prevResult)
+    catch {      
+        handleShopListRequest(currentPage, setShopList)
     }
+    
     /* do {
         try{
             console.log('currentPage: ', currentPage);

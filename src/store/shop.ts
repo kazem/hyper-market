@@ -17,14 +17,17 @@ export const useShopStore = defineStore('shop', {
         async setShopList() {
             this.setServerState(ServerState.PENDING)
             try {
-                this.shopList = await handleShopListRequest(1, [])
-                console.log('this.shopList: ', this.shopList);
+                await handleShopListRequest(1, this.setShopListState)             
                 this.setServerState(ServerState.SUCCESSFUL)
             }
             catch (e) {
                 console.log('catch: ', e);
                 this.setServerState(ServerState.ERROR)
             }
+        },
+
+        setShopListState(shopList: Shop[]) { 
+            this.shopList = this.shopList?.concat(shopList)         
         },
 
         setSelectedStore(storeId: string) {
