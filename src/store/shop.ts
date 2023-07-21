@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { Shop, ServerState, StoreProduct, basketItem, Order } from "@/type/index"
 import { getShopList, getShopProducts, createOrder, handleShopListRequest } from "@/service/shop"
+import {getStoresFromDb} from '../service/IndexedDb'
 
 export const useShopStore = defineStore('shop', {
     state: () => {
@@ -17,7 +18,8 @@ export const useShopStore = defineStore('shop', {
         async setShopList() {
             this.setServerState(ServerState.PENDING)
             try {
-                await handleShopListRequest(1, this.setShopListState)             
+                await handleShopListRequest(1, [])   
+                this.shopList = await getStoresFromDb()         
                 this.setServerState(ServerState.SUCCESSFUL)
             }
             catch (e) {

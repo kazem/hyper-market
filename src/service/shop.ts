@@ -1,13 +1,16 @@
 import API from './API'
 import { Shop, StoreProduct, Order, ApiParams } from "@/type/index"
 import { getUserId } from '@/utils/authUtil'
+import { addStoresToDb } from '../service/IndexedDb'
 
 export function getShopList(params?: ApiParams): Promise<Shop[]> {
     return new Promise((resolve, reject) => {
         let setParams = params?.pagination ? `&_page=${params.pagination.page}&_limit=${params.pagination.limit}` : ''
         API().get(`/stores?userIds_like=${getUserId()}${setParams}`).then(response => {
-            if (!response.data.err){
-                resolve([...response.data])                  
+            if (!response.data.err){               
+                setTimeout(() => {
+                    resolve([...response.data]) 
+                }, 5000);                           
             }
             else {
 
@@ -16,22 +19,26 @@ export function getShopList(params?: ApiParams): Promise<Shop[]> {
             }
         }).catch(() => {
 
-                reject("ERROR")
+                setTimeout(() => {
+                    reject("ERROR")
+                }, 5000);
 
         })
     })
 }
 
-export async function handleShopListRequest(currentPage: number, setShopList: Function) {
+export async function handleShopListRequest(currentPage: number, shopList: Shop[]): Promise<Shop[] | undefined> {
     try{      
-        let result = await getShopList({pagination: {page: currentPage, limit: 100}})        
-        if(result.length < 100)
+        let result = await getShopList({pagination: {page: currentPage, limit: 100}})
+        addStoresToDb(result)              
+        shopList.push(...result)     
+        if(result.length < 100){          
             return;
-        setShopList(result)
-        await handleShopListRequest(currentPage + 1, setShopList)
+        }
+        await handleShopListRequest(currentPage + 1, shopList)
     }
     catch {      
-        handleShopListRequest(currentPage, setShopList)
+        await handleShopListRequest(currentPage, shopList)
     }
     
     /* do {
